@@ -1,0 +1,56 @@
+// vars
+$fonts: '../fonts/';
+$images: '../images/';
+
+// fonts
+$roboto: 'Roboto', sans-serif;
+$raleway: 'Raleway', sans-serif;
+
+
+$breakpoints: (
+	phone-xs: 375px,
+	phone: 768px,
+	tablet: 992px,
+	desktop: 1200px,
+	desktop_lg: 1400px,
+);
+
+// font settings
+$grid-gutter-width: 15px;
+$container-large-desktop: 1200px;
+
+$font-family-base: $roboto;
+$font-size-base: 16px;
+$line-height-base: 1.25;
+$font-size-h1: 36px;
+$font-size-h2: 36px;
+$font-size-h3: 20px;
+$font-size-h4: 24px;
+
+$paragraph-spacing: 0 0 15px;
+
+$hover-opacity: 0.8;
+$time-animation: 0.3s;
+
+// colors
+$white: #fff;
+$black: #000;
+$gray: #737373;
+
+// custom colors
+$r-blue: #003388;
+$b-ribbon: #0058E8;
+$w-sand: #F4F4F4;
+
+$base-color: $black;
+$body-bg: $white;
+
+$link-color: $black;
+
+$btn-color: $white;
+$btn-font-family: $roboto;
+$btn-border-radius-base: 3px;
+$btn-font-size: 16px;
+$btn-line-height: 28px;
+$btn-font-weight: 500;
+$btn-min-width: 205px;
