@@ -200,7 +200,6 @@ h1, .h1{
 	font-weight: 800;
 	color: $black;
 	text-align: center;
-	text-transform: uppercase;
 	margin: 0;
 	@include media("<desktop"){}
 	@include media("<tablet"){}
