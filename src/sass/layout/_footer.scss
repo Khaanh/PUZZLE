@@ -1,2 +1,124 @@
 /* footer */
-.footer-page{}
+.footer-page{
+	background-color: $black;
+	padding: 70px 0 65px;
+	@include media('<phone'){
+		padding: 32px 0;
+	}
+	.footer{
+		&-row-one{
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			margin-bottom: 15px;
+			@include media('<phone'){
+				margin-bottom: 25px;
+			}
+		}
+		&-row-two{
+			display: flex;
+			@include media('<phone'){
+				flex-direction: column-reverse;
+			}
+		}
+		&__nav{
+			display: flex;
+			margin-bottom: 12px;
+			flex-wrap: wrap;
+		}
+		&__list{
+			color: $white;
+			margin-right: 90px;
+			&-items{}
+			&-link{
+				color: $white;
+				line-height: 37px;
+				border-bottom: 1px solid $white;
+				opacity: 0.8;
+				transition: opacity .3s ease;
+				&:hover{
+					opacity: 1;
+				}
+			}
+		}
+		&__contact{
+			&-title{
+				font-family: $raleway;
+				font-weight: bold;
+				font-size: 20px;
+				line-height: 35px;
+				color: $white;
+				text-align: left;
+				margin: 0 0 25px;
+			}
+			&-list{
+				max-width: 270px;
+			}
+			&-items{
+				&:first-child{
+					margin-bottom: 32px;
+				}
+				&:nth-child(2){
+					margin-bottom: 8px;
+				}
+			}
+			&-link{
+				color: $white;
+				font-size: 16px;
+				line-height: 28px;
+				border-bottom: 1px solid transparent;
+				transition: .3s ease;
+				&:hover{
+					border-bottom: 1px solid $white;
+				}
+				&-mail{
+					position: relative;
+					display: inline-block;
+					padding-left: 20px;
+					line-height: normal;
+					&:after{
+						content: '';
+						display: block;
+						width: 13px;
+						height: 10px;
+						background-image: url(../images/mail-inv.svg);
+						position: absolute;
+						top: 50%;
+						left: 0;
+						transform: translateY(-50%);
+					}
+				}
+			}
+		}
+		&-desc{
+			color: $white;
+			max-width: 860px;
+			.right-desc{
+				font-size: 12px;
+				line-height: 21px;
+				margin: 0 0 25px;
+			}
+			.all-right{
+				font-size: 12px;
+				line-height: 21px;
+			}
+		}
+		&-logo{
+			align-self: flex-end;
+			@include media('<phone'){
+				align-self: center;
+				margin-bottom: 32px;
+			}
+			.logo{
+				> a {
+					display: block;
+					width: 100%;
+					> img {
+						display: block;
+						width: 100%;
+					}
+				}
+			}
+		}
+	}	
+}

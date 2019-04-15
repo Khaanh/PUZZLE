@@ -32,16 +32,38 @@
 }
 .main{
 	padding: 150px 0 140px;
+	@include media('<tablet'){
+		padding: 55px 0 45px;
+	}
+	@include media('<phone'){
+		padding: 32px 0 35px;
+	}
 	&__page{}
-	&-title{}
+	&-title{
+		@include media('<phone'){
+			font-size: 24px;
+			line-height: 1.25;
+			margin: 0 0 18px;
+		}
+	}
 	&__row{
 		display: flex;
 		justify-content: center;
+		@include media('<phone'){
+			flex-direction: column;
+			align-items: center;
+		}
 		&:not(:last-child){
 			margin-bottom: 80px;
+			@include media('<tablet'){
+				margin-bottom: 32px;
+			}
 		}
 		&-reverse{
 			flex-direction: row-reverse;
+			@include media('<phone'){
+				flex-direction: column;
+			}
 			.main__row-content{
 				align-self: center;
 			}
@@ -50,6 +72,12 @@
 			width: 370px;
 			height: 370px;
 			margin: 0px 15px;
+			@include media('<phone-xs'){
+				max-width: 320px;
+				width: 100%;
+				height: auto;
+				margin: 0;
+			}
 			> img{
 				display: block;
 				width: 100%;
@@ -62,6 +90,9 @@
 			padding: 0 5px;
 			text-align: center;
 			align-self: flex-end;
+			@include media('<phone'){
+				align-self: initial;
+			}
 			&-title{
 				margin-bottom: 20px;
 			}
@@ -69,6 +100,12 @@
 				line-height: 28px;
 				color: $gray;
 				margin-bottom: 36px;
+				@include media('<phone'){
+					margin-bottom: 24px;
+				}
+				@include media('<phone-xs'){
+					margin-bottom: 18px;
+				}
 			}
 			&-link{
 				.link{
@@ -90,6 +127,11 @@
 	&-title{
 		color: $white;
 		margin-bottom: 70px;
+		@include media('<phone'){
+			font-size: 24px;
+			line-height: 1.25;
+			margin-bottom: 45px;
+		}
 	}
 	&__row{
 		color: $white;
@@ -262,30 +304,72 @@
 .join{
 	padding: 133px 0 110px;
 	position: relative;
+	@include media('<tablet'){
+		padding: 0;
+	}
+	&-container{
+		@include media('<tablet'){
+			display: flex;
+			flex-direction: column-reverse;
+		}
+	}
 	&-col{
 		&-right{
 			position: absolute;
 			top: 0;
 			left: 50%;
 			height: 100%;
+			@include media('<tablet'){
+				position: static;
+				margin: 0 -15px;
+			}
 		}
 	}
 	&__page{
 		max-width: 370px;
 		width: 100%;
 		margin: 0 117px 0px 90px;
+		@include media('<tablet'){
+			max-width: 70%;
+			margin: 0 auto;
+			padding: 32px 0px;
+		}
+		@include media('<phone'){
+			max-width: 100%;
+		}
 	}
 	&-title{
 		max-width: 330px;
 		text-align: left;
 		margin: 0 0 24px;
+		@include media('<tablet'){
+			max-width: initial;
+			text-align: center;
+			font-size: 32px;
+		}
+		@include media('<phone'){
+			font-size: 24px;
+			line-height: 1.25;
+			margin: 0 0 18px;
+		}
+
 	}
 	&-desc{
 		text-align: left;
 		margin-bottom: 24px;
+		@include media('<tablet'){
+			text-align: center;
+		}
+		@include media('<phone'){
+			line-height: 24px;
+			margin: 0 0 18px;
+		}
 	}
 	&-btn{
 		text-align: left;
+		@include media('<tablet'){
+			text-align: center;
+		}
 	}
 	&-img{
 		height: 100%;
