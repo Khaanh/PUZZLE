@@ -1,12 +1,15 @@
 .hero{
-	background-color: $w-sand;
-	background-image: url(../images/main.png);
-	background-repeat: no-repeat;
-	background-size: auto;
-	background-position: 100% center;
+	// background-color: $w-sand;
+	// background-image: url(../images/main.png);
+	// background-repeat: no-repeat;
+	// background-size: auto;
+	// background-position: 100% center;
+	position: relative;
+	padding: 150px 0;
 	display: flex;
 	align-items: center;
 	height: calc(100vh - 60px);
+	&__page{}
 	&__main{
 		max-width: 470px;
 		width: 100%;
@@ -26,6 +29,17 @@
 		&-button{
 			.link{
 				text-transform: uppercase;
+			}
+		}
+	}
+	&__pic{
+		position: absolute;
+		left: 30%;
+		width: 100%;
+		&-img{
+			> img {
+				display: block;
+				width: 100%;
 			}
 		}
 	}
@@ -185,6 +199,21 @@
 			&:hover{
 				box-shadow: 0 15px 20px rgba(159, 159, 159, 0.2);
 			}
+			&:nth-child(2){
+				.media__row-view{
+					background-image: url(../images/04.jpg);
+				}
+			}
+			&:nth-child(3){
+				.media__row-view{
+					background-image: url(../images/05.jpg);
+				}
+			}
+			&:last-child{
+				.media__row-view{
+					background-image: url(../images/06.jpg);
+				}
+			}
 		}
 		&-link{
 			display: block;
@@ -261,30 +290,46 @@
 				display: flex;
 				&-list{
 					margin-right: 10px;
+					&:first-child{
+						.share{
+							&:before{
+								content: '';
+								display: block;
+								width: 15px;
+								height: 15px;
+								background-image: url(../images/icon01.svg);
+								background-repeat: no-repeat;
+								background-position: center;
+								margin-right: 4px;
+							}
+						}
+					}
+					&:last-child{
+						.count{
+							&:before{
+								content: '';
+								display: block;
+								width: 25px;
+								height: 15px;
+								background-image: url(../images/icon02.svg);
+								background-repeat: no-repeat;
+								background-position: center;
+								margin-right: 4px;
+							}
+						}
+					}
 				}
 				&-link{
 					display: flex;
-					&:before{
-						content: '';
-						display: block;
-						width: 15px;
-						height: 15px;
-						background-image: url(../images/icon01.svg);
-						background-repeat: no-repeat;
-						background-position: center;
-						margin-right: 4px;
-					}
-					// .share{
-					// 	&:before{
-					// 		content: '';
-					// 		background-image: url(../images/icon01.svg);
-					// 	}
-					// }
-					// .count{
-					// 	&:before{
-					// 		content: '';
-					// 		background-image: url(../images/icon02.svg);
-					// 	}
+					// &:before{
+					// 	content: '';
+					// 	display: block;
+					// 	width: 15px;
+					// 	height: 15px;
+					// 	background-image: url(../images/icon01.svg);
+					// 	background-repeat: no-repeat;
+					// 	background-position: center;
+					// 	margin-right: 4px;
 					// }
 				}
 			}
