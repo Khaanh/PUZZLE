@@ -137,37 +137,79 @@
 .results{
 	padding: 150px 0;
 	background-color: $r-blue;
+	@include media('<tablet'){
+		padding: 55px 0 45px;
+	}
+	@include media('<phone'){
+		padding: 32px 0 35px;
+	}
 	&__page{}
 	&-title{
 		color: $white;
 		margin-bottom: 70px;
+		@include media('<tablet'){
+			margin-bottom: 45px;
+		}
 		@include media('<phone'){
 			font-size: 24px;
 			line-height: 1.25;
-			margin-bottom: 45px;
+			margin-bottom: 32px;
 		}
 	}
 	&__row{
 		color: $white;
 		display: flex;
 		justify-content: center;
+		@include media('<phone-xs'){
+			flex-direction: column;
+		}
 		&-col{
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			margin: 0 14px;
+			margin: 0 14px 12px;
+			flex: 1 1 170px;
+			max-width: 170px;
+			padding: 0 8px;
+			@include media('<phone'){
+				flex: 1 1 auto;
+				max-width: initial;
+				margin: 0 8px 12px;
+				padding: 0px 4px;
+			}
 		}
 		&-number{
 			font-size: 72px;
+			display: block;
+			line-height: 1.25;
+			margin-bottom: 12px;
+			@include media('<tablet'){
+				font-size: 48px;
+			}
+			@include media('<phone'){
+				font-size: 32px;
+			}
 		}
 		&-caption{
 			font-size: 24px;
 			margin-bottom: 10px;
+			display: block;
+			@include media('<phone'){
+				font-size: 20px;
+			}
 		}
 		&-desc{
 			line-height: 28px;
 			max-width: 170px;
 			text-align: center;
+			display: block;
+			@include media('<tablet'){
+				line-height: 1.25;
+			}
+			@include media('<phone'){
+				max-width: initial;
+				width: 100%;
+			}
 		}
 	}
 }
@@ -321,16 +363,6 @@
 				}
 				&-link{
 					display: flex;
-					// &:before{
-					// 	content: '';
-					// 	display: block;
-					// 	width: 15px;
-					// 	height: 15px;
-					// 	background-image: url(../images/icon01.svg);
-					// 	background-repeat: no-repeat;
-					// 	background-position: center;
-					// 	margin-right: 4px;
-					// }
 				}
 			}
 		}

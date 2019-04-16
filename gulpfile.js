@@ -106,8 +106,8 @@ gulp.task('watch', () => {
 	gulp.watch("public/*.html").on('change', browser.reload);
 	// Watch .sass files
 	gulp.watch('src/sass/**/*.scss', ['styles', browser.reload]);
-	gulp.watch('src/css/**/*.css.map', ['styles', browser.reload]);
-	gulp.watch('src/css/**/*.css', ['styles', browser.reload]);
+	// gulp.watch('src/css/**/*.css.map', ['styles', browser.reload]);
+	// gulp.watch('src/css/**/*.css', ['styles', browser.reload]);
 	gulp.watch('src/css/**/*.css', ['minify', browser.reload]);
 	// Watch .js files
 	gulp.watch('src/js/*.js', ['js', browser.reload]);
