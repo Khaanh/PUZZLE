@@ -1,7 +1,6 @@
 $(document).ready(initPage);
 function initPage(){
 	ImgTobg();
-	mobileMenu();
 	pageScrollTop();
 	counter();
 }
@@ -14,17 +13,7 @@ function ImgTobg() {
 	});
 }
 
-function mobileMenu(){
-	$('<span class="open-menu"><span></span><span></span><span></span><span></span></span>').appendTo('.header-page > .container');
-	$('<span class="fader"/>').appendTo('.header-page > .container');
-	$('html').on('click', '.open-menu', function() {
-		$('body').toggleClass('menu-opened');
-		return false;
-	});
-	$('.fader').on('click touchmove', function(event) {
-		$('body').removeClass('menu-opened');
-	});
-}
+
 
 function pageScrollTop() {
 	$(window).scroll(function(){
@@ -76,3 +65,4 @@ function counter(){
 		});
 	})
 }
+
