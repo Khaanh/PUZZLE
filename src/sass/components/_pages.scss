@@ -13,10 +13,12 @@
 		padding: 32px 0 100px;
 	}
 	&-container{
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
+		@include media('<tablet'){
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
 
 	}
 	&__page{
@@ -74,7 +76,11 @@
 		}
 	}
 	&__tablet{
-		margin: -32px -15px;
+		margin: -32px -75px;
+		display: none;
+		@include media('<tablet'){
+			display: block;
+		}
 		&-img{
 			> img {
 				display: block;
@@ -176,11 +182,18 @@
 .results{
 	padding: 150px 0;
 	background-color: $r-blue;
+	opacity: 0;
+	transition: opacity .3s ease, transform .3s ease;
+	transform: translateY(150px);
 	@include media('<tablet'){
 		padding: 55px 0 45px;
 	}
 	@include media('<phone'){
 		padding: 32px 0 35px;
+	}
+	&.show{
+		opacity: 1;
+		transform: translateY(0px);
 	}
 	&__page{}
 	&-title{
@@ -222,11 +235,16 @@
 			display: block;
 			line-height: 1.25;
 			margin-bottom: 12px;
+			opacity: 0;
+			transition: opacity .5s ease;
 			@include media('<tablet'){
 				font-size: 48px;
 			}
 			@include media('<phone'){
 				font-size: 32px;
+			}
+			&.active{
+				opacity: 1;
 			}
 		}
 		&-caption{
@@ -234,7 +252,7 @@
 			margin-bottom: 10px;
 			display: block;
 			@include media('<phone'){
-				font-size: 20px;
+				font-size: 18px;
 			}
 		}
 		&-desc{
