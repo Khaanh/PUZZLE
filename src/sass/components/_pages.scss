@@ -302,16 +302,24 @@
 	&__row{
 		display: flex;
 		justify-content: center;
-		flex-wrap: wrap; 
+		// flex-wrap: wrap; 
 		margin: 0 -15px 15px;
+		@include media('<tablet'){
+			flex-wrap: wrap;
+			margin: 0;
+		}
 		&-col{
 			max-width: 270px;
-			flex: 1 1 270px;
-			margin: 0 15px 15px;
+			// flex: 1 1 270px;
+			margin: 0 8px 15px;
 			height: 100%;
 			transition: .3s ease;
 			@include media('<tablet'){
-				background: red;
+				// bac
+				margin: 0 0 15px;
+				padding: 0px 10px;
+				max-width: 50%;
+				width: 100%;
 			}
 			@include media('<phone'){
 				max-width: initial;
@@ -338,7 +346,7 @@
 		}
 		&-link{
 			display: block;
-			max-width: 270px;
+			// max-width: 270px;
 			width: 100%;
 			min-height: 345px;
 			@include media('<phone'){
