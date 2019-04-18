@@ -65,7 +65,7 @@ function counter(){
 function mobileMenu(){
 	$('.burger').on('click',function(){
 		$(this).toggleClass('menu-open');
-		$('.header__mobile').slideToggle('fast');
+		$('.header__mobile').toggleClass('show-menu');
 	})
 }
 

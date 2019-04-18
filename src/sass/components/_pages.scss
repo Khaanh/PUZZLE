@@ -187,7 +187,7 @@
 	padding: 150px 0;
 	background-color: $r-blue;
 	opacity: 0;
-	transition: opacity .3s ease, transform .3s ease;
+	transition: opacity .5s ease, transform .5s ease;
 	transform: translateY(150px);
 	@include media('<tablet'){
 		padding: 55px 0 45px;
@@ -310,6 +310,9 @@
 			margin: 0 15px 15px;
 			height: 100%;
 			transition: .3s ease;
+			@include media('<tablet'){
+				background: red;
+			}
 			@include media('<phone'){
 				max-width: initial;
 				flex: 1 1 auto;

@@ -51,7 +51,7 @@
 		&__menu{
 			margin-right: 100px;
 			@include media('<tablet'){
-				margin: 0px 0px 80px 0;
+				margin: 0px 0px 60px 0;
 			}
 		}
 		&__contact{
@@ -94,7 +94,8 @@
 		&__mobile{
 			display: flex;
 			@include media('<tablet'){
-				position: absolute;
+				// display: none;
+				// position: absolute;
 				flex-direction: column;
 				top: 60px;
 				left: 0;
@@ -104,6 +105,15 @@
 				height: calc(100vh - 60px);
 				padding-bottom: 32px;
 				overflow-y: scroll;
+
+
+				position: fixed;
+				transform: translateY(-120%);
+			}
+			&.show-menu{
+				transition: transform .3s ease;
+				transform: translateY(0);
+				z-index: 300;
 			}
 		}
 		&__address{
@@ -120,68 +130,74 @@
 				&:first-child{
 					margin-bottom: 32px;
 				}
-			}
-		}
-		.burger{
-			height: 35px;
-			width: 35px;
-			padding: 5px;
-			display: none;
-			cursor: pointer;
-			@include media('<tablet'){
-				display: flex;
-				justify-content: center;
-				align-items: center;
-			}
-			&.menu-open{
-				// transform: rotate(180deg);
-				// transition: rotate 3s;
-				// transition: transform .3s ease, top .3s ease;
-				span{
-					transition: transform .3s ease, top .3s ease;
-					visibility: hidden;
-					&:after,
-					&:before{
-						transition: transform .3s ease, top .3s ease;
-						visibility: visible;
-						top: 0;
-						bottom: 0;
-						margin: 0;
-						transform: rotate(135deg);
-					}
-					&:before{
-						content: '';
-						transform: rotate(-135deg);	    
-					}
+				&:nth-child(2){
+					margin-bottom: 12px;
 				}
 			}
-			span{
+		}
+		.mob-menu{
+			display: none;
+			@include media('<tablet'){
 				display: block;
-				width: 100%;
-				height: 3px;
-				background-color: $black;
 				position: relative;
-				visibility: visible;
-				transition: all .3s ease;
-				// transition: transform .3s ease, top .3s ease;
-				// transition: .3s ease;
-				&:after,
-				&:before{
-					content: '';
+				z-index: 400;
+			}
+			.burger{
+				height: 35px;
+				width: 35px;
+				padding: 5px;
+				// display: none;
+				cursor: pointer;
+				@include media('<tablet'){
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+				&.menu-open{
+					span{
+						transition: transform .3s ease, top .3s ease;
+						visibility: hidden;
+						&:after,
+						&:before{
+							transition: transform .3s ease, top .3s ease;
+							visibility: visible;
+							top: 0;
+							bottom: 0;
+							margin: 0;
+							transform: rotate(135deg);
+						}
+						&:before{
+							content: '';
+							transform: rotate(-135deg);	    
+						}
+					}
+				}
+				span{
 					display: block;
 					width: 100%;
 					height: 3px;
 					background-color: $black;
-					margin: 5px 0;
-					position: absolute;
-					bottom: 100%;
-					transform: rotate(180deg);
-					transition: transform .3s ease;
-				}
-				&:after{
-					content: '';
-					top: 100%;
-					transform: rotate(-180deg);
+					position: relative;
+					visibility: visible;
+					transition: all .3s ease;
+					&:after,
+					&:before{
+						content: '';
+						display: block;
+						width: 100%;
+						height: 3px;
+						background-color: $black;
+						margin: 5px 0;
+						position: absolute;
+						bottom: 100%;
+						transform: rotate(180deg);
+						transition: transform .3s ease;
+					}
+					&:after{
+						content: '';
+						top: 100%;
+						transform: rotate(-180deg);
+					}
 				}
 			}
 		}
