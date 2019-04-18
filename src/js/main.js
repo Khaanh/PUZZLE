@@ -3,6 +3,7 @@ function initPage(){
 	ImgTobg();
 	pageScrollTop();
 	counter();
+	mobileMenu();
 }
 
 function ImgTobg() {
@@ -12,9 +13,6 @@ function ImgTobg() {
 		}
 	});
 }
-
-
-
 function pageScrollTop() {
 	$(window).scroll(function(){
 		if ($(this).scrollTop() > 100) {
@@ -31,7 +29,6 @@ function pageScrollTop() {
 		e.preventDefault();
 	});
 }
-
 function counter(){
 	var time = 2,
 		cc = 1;
@@ -63,6 +60,12 @@ function counter(){
 				}
 			}
 		});
+	})
+}
+function mobileMenu(){
+	$('.burger').on('click',function(){
+		$(this).toggleClass('menu-open');
+		$('.header__mobile').slideToggle('fast');
 	})
 }
 
