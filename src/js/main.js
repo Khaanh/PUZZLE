@@ -62,6 +62,19 @@ function counter(){
 		});
 	})
 }
+
+function showBlock() {
+	$(window).scroll(function(){
+		var show = $(window);
+		if ( show.scrollTop() > 300) {
+			$('.first').addClass('show');
+			if (show.scrollTop() > 900) {
+				$('.seconde').addClass('show');
+			}
+		}
+	})
+}showBlock();
+
 function mobileMenu(){
 	$('.burger').on('click',function(){
 		$(this).toggleClass('menu-open');
